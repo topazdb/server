@@ -54,5 +54,5 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
+#update mysql.users set Host='%' where User='root';
 -- Dump completed on 2018-10-25 14:09:31
