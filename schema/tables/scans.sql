@@ -11,7 +11,7 @@ create table `scans` (
     `creationDate` datetime default CURRENT_TIMESTAMP not null,
     `magnification` int(11) unsigned default null,
     `threshold` int(11) default null,
-    `resolution` int(11) default null,
+    `resolution` int(11) default null
 
     /** Constraints **/
     constraint `scans_authorId_fk`

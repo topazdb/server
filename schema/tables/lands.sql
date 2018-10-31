@@ -9,6 +9,6 @@ create table lands (
     /** Constraints **/
     constraint `lands_scanId_fk`
         foreign key (`scanId`) references `scans` (`id`)
-        on delete cascade;
+        on delete cascade
 
 ) engine=InnoDB auto_increment=1 default charset=utf8;
