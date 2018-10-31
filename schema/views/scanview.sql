@@ -8,4 +8,7 @@ select
 
 from `scans`
     left join `authors` on `scans`.`authorId`=`authors`.`id`
-    left join `lands` on `lands`.`scanId`=`scans`.`id`;
+    left join `lands` on `lands`.`scanId`=`scans`.`id`
+
+group by
+    `scans`.`id`;
