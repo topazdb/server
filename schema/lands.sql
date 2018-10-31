@@ -11,4 +11,4 @@ create table lands (
         foreign key (`scanId`) references `scans` (`id`)
         on delete cascade;
 
-) engine=InnoDB default charset=utf8;
+) engine=InnoDB auto_increment=1 default charset=utf8;
