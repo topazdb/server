@@ -11,9 +11,18 @@ create table `scans` (
     `creationDate` datetime default CURRENT_TIMESTAMP not null,
     `magnification` int(11) unsigned default null,
     `threshold` int(11) default null,
-    `resolution` int(11) default null
+    `resolution` int(11) default null,
 
     /** Constraints **/
-) engine=InnoDB default charset=utf8;
+    constraint `scans_authorId_fk`
+        foreign key (`authorId`) references `authors` (`id`),
+
+    constraint `scans_setId_fk`
+        foreign key (`setId`) references `sets` (`id`),
+    
+    constraint `scans_instrumentId_fk`
+        foreign key (`instrumentId`) references `instruments` (`id`)
+        
+) engine=InnoDB auto_increment=1 default charset=utf8;
 
 
