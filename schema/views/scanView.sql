@@ -7,7 +7,7 @@ select
     `sets`.`name` as `setName`,
     count(distinct `scans`.`bulletNo`) as `bulletCount`,
     count(distinct `scans`.`barrelNo`) as `barrelCount`,
-    count(`lands`.`id`) as `landCount`,
+    count(`lands`.`id`) as `landCount`
 
 from `scans`
     left join `authors` on `scans`.`authorId`=`authors`.`id`

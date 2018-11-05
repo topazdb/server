@@ -1,4 +1,3 @@
-
 alter table `instruments` 
     add constraint `instruments_typeId_serialNo_un` 
         unique (`instrumentTypeId`, `serialNo`),

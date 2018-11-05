@@ -11,5 +11,3 @@ create table `scans` (
     `threshold` int(11) default null,
     `resolution` int(11) default null
 ) engine=InnoDB auto_increment=1 default charset=utf8;
-
-
