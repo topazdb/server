@@ -1,13 +1,15 @@
+drop view if exists `instrumentView`;
+
 create sql security invoker view `instrumentView` as
 
 select
     `instruments`.*,
-    `instrumentTypes`.`name`,
     `instrumentTypes`.`version`,
     `instrumentTypes`.`manufacturer`,
     `instrumentTypes`.`model`,
-    count(`scans`.`id`) as `scanCount`
-    
+    count(`scans`.`id`) as `scanCount`,
+    `scans`.`creationDate` as `lastScanDate`
+
 from
     `instruments`
     left join `instrumentTypes` on `instruments`.`instrumentTypeId`=`instrumentTypes`.`id`

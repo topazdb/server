@@ -1,3 +1,4 @@
+drop view if exists scanView;
 create sql security invoker view scanView as
 
 select
