@@ -5,13 +5,13 @@ select
     `instrumentTypes`.`name`,
     `instrumentTypes`.`version`,
     `instrumentTypes`.`manufacturer`,
-    `instrumentTypes`.`model`
-
+    `instrumentTypes`.`model`,
+    count(`scans`.`id`) as `scanCount`
+    
 from
     `instruments`
-
-left join
-    `instrumentTypes` on `instruments`.`instrumentTypeId`=`instrumentTypes`.`id`
+    left join `instrumentTypes` on `instruments`.`instrumentTypeId`=`instrumentTypes`.`id`
+    left join `scans` on `instruments`.`id`=`scans`.`instrumentId`
 
 group by
     `instruments`.`id`;
