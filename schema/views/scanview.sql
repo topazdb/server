@@ -1,4 +1,5 @@
 create sql security invoker view scanView as
+
 select
     `scans`.*,
     `authors`.`name` as `authorName`,
