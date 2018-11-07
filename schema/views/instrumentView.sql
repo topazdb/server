@@ -1,5 +1,4 @@
 drop view if exists `instrumentView`;
-
 create sql security invoker view `instrumentView` as
 
 select
@@ -16,4 +15,8 @@ from
     left join `scans` on `instruments`.`id`=`scans`.`instrumentId`
 
 group by
-    `instruments`.`id`;
+    `instruments`.`id`
+
+order by
+    `scans`.`creationDate` desc,
+    `instruments`.`id` asc;
