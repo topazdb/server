@@ -1,4 +1,4 @@
- alter table scans 
+ alter table `scans`
     add constraint `scans_authorId_fk`
         foreign key (`authorId`) references `authors` (`id`),
 
