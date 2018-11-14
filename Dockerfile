@@ -1,6 +1,6 @@
 FROM mariadb/server
 
-ENV MARIADB_DATABASE HambySet44
+ENV MARIADB_DATABASE topazdb
 ENV MARIADB_ROOT_PASSWORD root
 
 COPY ./config/extra.cnf /etc/mysql/conf.d/
