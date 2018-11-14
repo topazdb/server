@@ -1,5 +1,4 @@
-drop table if exists lands;
-create table lands (
+create table if not exists lands (
     `id` bigint(20) unsigned primary key auto_increment,
     `scanId` bigint(20) unsigned not null,
     `path` text default null

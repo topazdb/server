@@ -1,5 +1,4 @@
-drop view if exists scanView;
-create sql security invoker view scanView as
+create sql security invoker view if not exists scanView as
 
 select
     `scans`.*,

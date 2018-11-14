@@ -1,5 +1,4 @@
-drop table if exists authors;
-create table authors (
+create table if not exists authors (
     `id` bigint(20) unsigned primary key auto_increment,
     `name` varchar(200) not null,
     `contact` text

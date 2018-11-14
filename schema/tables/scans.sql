@@ -1,5 +1,4 @@
-drop table if exists `scans`;
-create table `scans` (
+create table if not exists `scans` (
     `id` bigint(20) unsigned primary key auto_increment not null,
     `authorId` bigint(20) unsigned not null,
     `setId` bigint(20) unsigned not null,

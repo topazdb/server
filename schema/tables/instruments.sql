@@ -1,5 +1,4 @@
-drop table if exists instruments;
-create table instruments (
+create table if not exists instruments (
     `id` bigint(20) unsigned primary key auto_increment,
     `instrumentTypeId` bigint(20) unsigned not null,
     `serialNo` varchar(300) null,

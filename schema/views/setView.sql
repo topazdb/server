@@ -1,5 +1,4 @@
-drop view if exists setView;
-create sql security invoker view `setView` as
+create sql security invoker view if not exists `setView` as
 
 select
     `sets`.*,

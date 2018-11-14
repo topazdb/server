@@ -1,5 +1,4 @@
-drop view if exists `instrumentView`;
-create sql security invoker view `instrumentView` as
+create sql security invoker view if not exists `instrumentView` as
 
 select
     `instruments`.*,

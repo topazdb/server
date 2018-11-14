@@ -9,3 +9,5 @@ for section in "tables" "constraints" "views"; do
         printf "\n\n";
     done;
 done;
+
+echo "INSERT INTO \`settings\` (\`name\`, \`value\`) VALUES ('version', $(cat ./version));";

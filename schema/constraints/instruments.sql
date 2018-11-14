@@ -1,7 +1,9 @@
 alter table `instruments` 
     add constraint `instruments_typeId_serialNo_un` 
-        unique (`instrumentTypeId`, `serialNo`),
+        unique if not exists 
+        (`instrumentTypeId`, `serialNo`),
         
-    add constraint `instruments_typeId_fk`
-        foreign key (`instrumentTypeId`) references `instrumentTypes` (`id`)
+    add constraint `instruments_typeId_fk` 
+        foreign key if not exists
+        (`instrumentTypeId`) references `instrumentTypes` (`id`)
         on delete cascade;

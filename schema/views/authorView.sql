@@ -1,5 +1,4 @@
-drop view if exists `authorView`;
-create sql security invoker view `authorView` as
+create sql security invoker view if not exists `authorView` as
 select 
     `authors`.*,
     count(`scans`.`id`) as `scanCount`,
