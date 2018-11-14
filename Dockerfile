@@ -6,9 +6,9 @@ ENV MARIADB_ROOT_PASSWORD root
 COPY ./config/extra.cnf /etc/mysql/conf.d/
 
 ## Create Schema
-WORKDIR /tmp
+WORKDIR /var/topazdb-src
 COPY . .
-RUN bin/combine > /docker-entrypoint-initdb.d/schema.sql
+RUN bin/combine > schema.sql
 RUN mkdir /var/x3p
 
 VOLUME ["/var/lib/mysql", "/var/x3p"]

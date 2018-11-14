@@ -10,4 +10,4 @@ for section in "tables" "constraints" "views"; do
     done;
 done;
 
-echo "INSERT INTO \`settings\` (\`name\`, \`value\`) VALUES ('version', $(cat ./version));";
+echo "insert into \`settings\` (\`name\`, \`value\`) values ('version', $(cat ./version));";
