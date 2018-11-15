@@ -9,7 +9,7 @@ COPY ./config/extra.cnf /etc/mysql/conf.d/
 WORKDIR /var/topazdb-src
 COPY . .
 RUN bin/combine > schema.sql
-RUN cp bin/install > > /docker-entrypoint-initdb.d/install.sh
+RUN cp bin/install /docker-entrypoint-initdb.d/install.sh
 RUN mkdir /var/x3p
 
 VOLUME ["/var/lib/mysql", "/var/x3p"]
