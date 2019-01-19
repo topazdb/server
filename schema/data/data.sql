@@ -6,7 +6,11 @@ insert into `authors` (`name`)
 
 insert into `sets` (`name`)
     values
-        ("Hamby Set 44");
+        ("Hamby Set 44"),
+        ("Test Set 1"),
+        ("Test Set 2"),
+        ("Test Set 3"),
+        ("Test Set 4");
 
 insert into `instrumentTypes` (`model`, `version`, `manufacturer`)
     values
