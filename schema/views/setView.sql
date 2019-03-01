@@ -3,7 +3,7 @@ create sql security invoker view if not exists `setView` as
 select
     `sets`.*,
     count(distinct `scans`.`barrelNo`) as `barrelCount`,
-    count(distinct `scans`.`bulletNo`) as `bulletCount`,
+    count(`scans`.`bulletNo`) as `bulletCount`,
     `scans`.`creationDate` as `lastScanDate`
 
 from

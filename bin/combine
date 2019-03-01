@@ -1,7 +1,7 @@
 #!/bin/bash
 # A script to combine all the sql files in schema into one
 
-for section in "tables" "constraints" "views" "data"; do
+for section in "tables" "constraints" "views"; do
     printf "/** $section **/\n\n";
 
     for file in `ls "schema/$section"`; do
