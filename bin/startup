@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Waiting for mysql startup";
+
+while !(mysqladmin ping -u $MARIADB_USER -p$MARIADB_PASSWORD) do
+    sleep 3
+done
+
+echo "Performing Database Updates";
+
+for update in `ls schema/updates`; do
+    mysql -u $MARIADB_USER -p$MARIADB_PASSWORD $MARIADB_DATABASE < "schema/updates/$update";
+done;

@@ -9,7 +9,7 @@ COPY ./config/extra.cnf /etc/mysql/conf.d/
 WORKDIR /var/topazdb-src
 COPY . .
 RUN bash bin/combine > /docker-entrypoint-initdb.d/schema.sql
-RUN mkdir /var/x3p
+RUN sed -i 's/\#\!\/bin\/bash/\#\!\/bin\/bash\nnohup bash \/var\/topazdb-src\/bin\/startup \&/' /usr/local/bin/docker-entrypoint.sh
 
-VOLUME [ "/var/lib/mysql", "/var/x3p" ]
+VOLUME [ "/var/lib/mysql" ]
 EXPOSE 3306
