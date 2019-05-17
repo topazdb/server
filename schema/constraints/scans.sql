@@ -9,4 +9,8 @@
     
     add constraint `scans_instrumentId_fk` 
         foreign key if not exists
-        (`instrumentId`) references `instruments` (`id`);
+        (`instrumentId`) references `instruments` (`id`),
+
+    add constraint `scans_scanNo_setId_un`
+        unique if not exists (`scanNo`, `setId`);
+        

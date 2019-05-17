@@ -1,5 +1,5 @@
 alter table `sets`
-    add constraint `sets_name_un`
+    add constraint `sets_name_parentId_un`
     unique if not exists (`name`, `parentId`);
 
 alter table `sets`
