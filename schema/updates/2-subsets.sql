@@ -25,7 +25,7 @@ if @version = 1 then
         foreign key if not exists (`parentId`) references `sets`(`id`);
 
     alter table `sets` 
-        drop constraint if exists `sets_name_un`;
+        drop key if exists `sets_name_un`;
 
     alter table `sets`
         add constraint `sets_name_parentId_un`
