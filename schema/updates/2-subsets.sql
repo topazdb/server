@@ -7,11 +7,16 @@ if @version = 1 then
     truncate table `sets`;
     truncate table `scans`;
     truncate table `lands`;
+    drop view if exists `setView`;
+    drop view if exists `authorView`;
+    drop view if exists `instrumentView`;
+    drop view if exists `scanView`;
 
     alter table `sets`
         add column if not exists (
             `parentId` bigint(20) unsigned null,
-            `childPrefix` varchar(300) null
+            `childPrefix` varchar(300) null,
+            `ignorePrefix` boolean default 0
         );
 
     alter table `scans`
