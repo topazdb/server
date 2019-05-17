@@ -3,10 +3,11 @@ select `value` into @version from `settings` where `name`='version';
 
 delimiter //
 if @version = 1 then
+    set foreign_key_checks = 0;
     truncate table `sets`;
     truncate table `scans`;
     truncate table `lands`;
-    
+
     alter table `sets`
         add column if not exists (
             `parentId` bigint(20) unsigned null,
@@ -45,7 +46,9 @@ if @version = 1 then
         add constraint `sets_scanNo_setId_un`
         unique (`scanNo`, `setId`);
 
-    update `settings` set `value`=2 where `name`='version';
+    replace into settings (name, value) values ('version', 2);
+
+    set foreign_key_checks = 1;
 end if//
 
 delimiter ;
